@@ -6,7 +6,13 @@ A production-quality full-stack application demonstrating **JWT-based authentica
 - **Frontend** → React 18 · TypeScript · Vite · React Router · React Query · Axios · React Hook Form · TailwindCSS
 
 ---
+# SCREENSHOTS : 
 
+![Dashboard Page](Dashboard.png)
+---
+![Register Page](Signup.png)
+
+---
 ## 📁 Project Structure
 
 ```
