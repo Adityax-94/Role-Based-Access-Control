@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary:   #0f0f13;
+    --bg-card:      #161620;
+    --bg-elevated:  #1e1e2e;
+    --border-subtle: rgba(255,255,255,0.08);
+    --text-primary:  #f1f0f5;
+    --text-muted:    #9995b0;
+    --brand:         #6366f1;
+    --brand-light:   #818cf8;
+    --success:       #22c55e;
+    --warning:       #f59e0b;
+    --error:         #ef4444;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  /* Subtle scrollbar */
+  ::-webkit-scrollbar        { width: 6px; }
+  ::-webkit-scrollbar-track  { background: transparent; }
+  ::-webkit-scrollbar-thumb  { background: rgba(255,255,255,0.12); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.22); }
+}
+
+@layer components {
+  /* Card */
+  .card {
+    @apply bg-[#161620] border border-white/[0.07] rounded-2xl;
+  }
+
+  /* Input base */
+  .input-base {
+    @apply w-full bg-[#1e1e2e] border border-white/[0.08] rounded-xl px-4 py-3
+           text-[#f1f0f5] placeholder-[#9995b0]
+           focus:outline-none focus:ring-2 focus:ring-indigo-500/60 focus:border-indigo-500/60
+           transition-all duration-200;
+  }
+
+  .input-error {
+    @apply border-red-500/60 focus:ring-red-500/40 focus:border-red-500/60;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700
+           text-white font-medium rounded-xl px-5 py-3
+           transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed
+           focus:outline-none focus:ring-2 focus:ring-indigo-500/60;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-white/[0.06] hover:bg-white/[0.10] active:bg-white/[0.04]
+           text-[#f1f0f5] font-medium rounded-xl px-5 py-3
+           border border-white/[0.08]
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-white/20;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2
+           bg-red-600/20 hover:bg-red-600/30 text-red-400
+           font-medium rounded-xl px-5 py-3
+           border border-red-500/20
+           transition-all duration-200;
+  }
+
+  /* Badge */
+  .badge-user  { @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/15 text-sky-300 border border-sky-500/25; }
+  .badge-admin { @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-violet-500/15 text-violet-300 border border-violet-500/25; }
+
+  /* Auth card wrapper */
+  .auth-card {
+    @apply card p-8 w-full max-w-md mx-auto animate-slide-up;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent;
+  }
+  .bg-mesh {
+    background-image:
+      radial-gradient(ellipse 80% 80% at 50% -20%, rgba(99,102,241,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 60% at 80% 80%,  rgba(139,92,246,0.10) 0%, transparent 55%);
+  }
+}
