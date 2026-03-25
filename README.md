@@ -432,17 +432,6 @@ Service → Repository → Database
 
 ---
 
-## 🧪 Testing with Swagger UI
-
-1. Start the backend
-2. Open http://localhost:8080/swagger-ui.html
-3. Use `POST /api/auth/register` to create a user
-4. Copy the `token` from the response
-5. Click the **Authorize** button (🔒) at the top
-6. Enter: `Bearer eyJhbGci...` (paste your token)
-7. Now you can test protected endpoints directly in the browser
-
----
 
 ## 🏗️ Architecture Decisions
 
